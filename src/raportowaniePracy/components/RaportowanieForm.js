@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input, Button, Table, Container, Radio, Header, Confirm, Icon, Segment, Item } from 'semantic-ui-react'
+import { Form, Input, Button, Table, Container, Radio, Header, Icon, Segment, Item } from 'semantic-ui-react'
 import { toast } from 'react-toastify'
 import classNames from 'classnames/bind'
 import preval from 'preval.macro'
@@ -167,7 +167,7 @@ class RaportowanieForm extends Component {
     trescKomunikatuBledu = error => {
         if (typeof error === 'undefined') return 'server_error'
         const { error_message, errorCause } = error
-        const komunikatBledu = error_message || errorCause || ''
+        let komunikatBledu = error_message || errorCause || ''
         if (typeof komunikatBledu === 'object') {
             komunikatBledu = 'server_error'
         }
@@ -228,9 +228,7 @@ class RaportowanieForm extends Component {
 
     render() {
         const {raportujZlecenie}  = this.state
-        //const { raportujLaser } = this.state
-        const { scanInput, employee, } = raportujZlecenie
-        //const { liczba_powtorzen, } = raportujLaser
+        const { scanInput, } = raportujZlecenie
         const pracownikOdczytany = raportujZlecenie.isPracownikOdczytany()
         const zlecenieOdczytane = raportujZlecenie.isZlecenieOdczytane()
         const elementOdczytany = raportujZlecenie.isElementOdczytany()
@@ -244,7 +242,7 @@ class RaportowanieForm extends Component {
             <Container textAlign='center'>
                 <Form autoComplete="off" loading={this.state.isLoading}>
                     <Header as='h2' id={preval`module.exports = new Date();`}>
-                        <Tlumaczenia id="Raportowanie czasu pracy – SAP" />
+                        <Tlumaczenia id="Raportowanie czasu pracy" />
                         <span className="timestamp">{buildDate.substr(0, 10)}</span>
                     </Header>
                     <Segment.Group>
@@ -443,13 +441,13 @@ const AkcjeTestowe = (props) => {
     }
     if (visible) return (
         <Segment >
-            <Button icon onClick={(evt) => { parent.setScan(90065200); parent.handleScan() }} type='button'>
+            <Button icon onClick={(evt) => { parent.setScan(160063198); parent.handleScan() }} type='button'>
                 <Icon name='external' />
-                Mariusz Kozłowski
+                Karol Horyd
                             </Button>
-            <Button icon onClick={(evt) => { parent.setScan(90065201); parent.handleScan() }} type='button'>
+            <Button icon onClick={(evt) => { parent.setScan(160063197); parent.handleScan() }} type='button'>
                 <Icon name='external' />
-                Łukasz Silwanowicz
+                Tomasz Góralczyk
                             </Button>
                 {/* <div>
                             { Object.keys(zlecenie)
@@ -507,7 +505,7 @@ const TrwajacePrace = (props) => {
                         <Table.Cell>
                             <ConfirmButton onClick={(evt) => handlePrzerwijPrace(praca.prodOperSchedule.id)}
                                 content={<Tlumaczenia id="Przerwij pracę" />}
-                                useConfirm={praca.czyProgramNiedawnoRozpoczety == true}
+                                useConfirm={praca.czyProgramNiedawnoRozpoczety === true}
                                 confirmContent="Program został niedawno rozpoczęty. Czy na pewno chcesz go przerwać?"
                                 cancelButton='Anuluj' //{<Tlumaczenia id="Anuluj" />}
                                 confirmButton='Przerwij pracę' //{<Tlumaczenia id="Przerwij pracę" />}

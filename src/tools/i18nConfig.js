@@ -1,7 +1,7 @@
 
 export const messages = 
     [
-        { id: "Raportowanie czasu pracy – SAP", en: "Working time reporting – SAP"},
+        { id: "Raportowanie czasu pracy", en: "Working time reporting"},
         { id: "Zeskanuj.kod", en: "Scan the code" },
         { id: "Raportowanie czasu pracy zlecenia", en: "Working time reporting - orders", },
         { id: "Raportowanie produkcji w oparciu o confirmation number", en: "Working time reporting - orders [confirmation number]", },

@@ -108,7 +108,7 @@ class RaportujZlecenie {
 
         const doWyslaniaJson = JSON.stringify(doWyslania)
 
-        fetch('/eoffice/production/raportowanie_pracy_zlecenia/raportowanie_pracy_zlecenia_json_endpoint.xml?action=analizuj_skan_kodu', {
+        fetch('/eoffice/production/raportowanie_pracy_zlecenia/raportowanie_pracy_zlecenia_marbo_json_endpoint.xml?action=analizuj_skan_kodu', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded' //'Content-Type': 'application/json' 

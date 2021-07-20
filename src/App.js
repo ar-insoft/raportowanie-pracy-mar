@@ -6,7 +6,7 @@ import 'semantic-ui-css/semantic.min.css'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css' 
-import RaportowanieForm from './raportowanieLasera/components/RaportowanieForm'
+import RaportowanieForm from './raportowaniePracy/components/RaportowanieForm'
 import ErrorBoundary from './tools/ErrorBoundary'
 import { messagesOf } from './tools/i18nConfig'
 
