@@ -39,7 +39,8 @@ class RaportujZlecenie {
     }
 
     isActionStartEnabled = () => {
-        return this.isOperacjaDoRozpoczeciaPracy() && this.isPracownikOdczytany()
+        //return this.isOperacjaDoRozpoczeciaPracy() && this.isPracownikOdczytany()
+        return this.isZlecenieOdczytane() && this.isPracownikOdczytany()
     }
 
     isActionPrzerwijEnabled = () => {

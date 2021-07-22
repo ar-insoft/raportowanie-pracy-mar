@@ -303,7 +303,7 @@ class RaportowanieForm extends Component {
                                                 {zlecenieOdczytane ? raportujZlecenie.zlecenieOpis() : <Tlumaczenia id="brak" />}
                                         </Table.Cell>
                                     </Table.Row>
-                                    <Table.Row key='element'>
+                                    {/* <Table.Row key='element'>
                                         <Table.Cell width={1}>
                                             <Tlumaczenia id="Element" />
                                     </Table.Cell>
@@ -322,12 +322,10 @@ class RaportowanieForm extends Component {
                                             {
                                                 'niepoprawne_dane': !moznaRaportowacNaOperacje,
                                             })}>
-                                            {/* <OperacjaDomylnaElementu raportujZlecenie={raportujZlecenie} 
-                                                operacjaOdczytana={operacjaOdczytana} pokaz={!raportujZlecenie.operacjeElementuGlownego}/>     */}
-                                                
+                                            
                                             <ListaOperacji raportujZlecenie={raportujZlecenie} onChange={this.handleChange} />
                                         </Table.Cell>
-                                    </Table.Row>
+                                    </Table.Row> */}
                                     <Table.Row key='prace'>
                                         <Table.Cell>
                                             <Tlumaczenia id="Trwające prace" />
@@ -480,7 +478,7 @@ const TrwajacePrace = (props) => {
             <Table.Header>
                 <Table.Row>
                     <Table.Cell>
-                    <Tlumaczenia id="Operacja technologiczna" />
+                        <Tlumaczenia id="Praca na" />
                 </Table.Cell>
                     <Table.Cell>
                         <Tlumaczenia id="Rozpoczęcie" />
@@ -494,10 +492,13 @@ const TrwajacePrace = (props) => {
                 {pracePracownika.map(praca =>
                     <Table.Row key={praca.id}>
                         <Table.Cell>
+                            <span className='prace_opis'><Tlumaczenia id="Zlecenie" />:</span> {praca.orderProductionSystemObject.title}
+                            <br/>
+                            <span className='prace_opis'><Tlumaczenia id="Element" />: </span>
+                            {praca.productProductOrComponentSystemObject.title}
+                            <br />
+                            <span className='prace_opis'><Tlumaczenia id="Operacja technologiczna" />: </span>
                             {praca.operationSystemObject.title}
-                            [<Tlumaczenia id="Zlecenie" />: 
-                            {praca.orderProductionSystemObject.title}] 
-                            [<Tlumaczenia id="Element" />: {praca.productProductOrComponentSystemObject.title}]
                         </Table.Cell>
                         <Table.Cell>
                             {praca.start_datetime}
