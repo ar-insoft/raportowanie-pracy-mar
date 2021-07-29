@@ -301,6 +301,8 @@ class RaportowanieForm extends Component {
                                                 'niepoprawne_dane': !zlecenieOdczytane,
                                             })}>
                                                 {zlecenieOdczytane ? raportujZlecenie.zlecenieOpis() : <Tlumaczenia id="brak" />}
+                                            {raportujZlecenie.zlecenieUwagiRaportowaniaProdukcji() 
+                                                && <span className="zlecenieUwagiRaportowaniaProdukcji">{raportujZlecenie.zlecenieUwagiRaportowaniaProdukcji()}</span>}
                                         </Table.Cell>
                                     </Table.Row>
                                     {/* <Table.Row key='element'>

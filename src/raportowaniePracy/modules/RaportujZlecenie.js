@@ -63,6 +63,10 @@ class RaportujZlecenie {
         : ''
     }
 
+    zlecenieUwagiRaportowaniaProdukcji = () => {
+        return this.orderProductionSystemObject.uwagi_raportowania_produkcji    
+    }
+
     isElementOdczytany = () => {
         return this.productOrComponentSystemObject.id_system_object
     }
